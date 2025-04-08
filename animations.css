@@ -1,0 +1,61 @@
+/* New file for additional animations to avoid extending styles.css */
+/* Scroll up animations - floating effect */
+.fade-in.active-up {
+    animation: float-up 0.8s ease forwards;
+}
+
+.slide-in-left.active-up {
+    animation: float-left-up 0.8s ease forwards;
+}
+
+.slide-in-right.active-up {
+    animation: float-right-up 0.8s ease forwards;
+}
+
+.scale-in.active-up {
+    animation: float-scale-up 0.8s ease forwards;
+}
+
+@keyframes float-up {
+    0% {
+        opacity: 0.7;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+@keyframes float-left-up {
+    0% {
+        opacity: 0.7;
+        transform: translateX(-30px) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(-5px) scale(1.02);
+    }
+}
+
+@keyframes float-right-up {
+    0% {
+        opacity: 0.7;
+        transform: translateX(30px) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(-5px) scale(1.02);
+    }
+}
+
+@keyframes float-scale-up {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.05);
+    }
+}
