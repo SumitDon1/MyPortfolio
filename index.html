@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="cyberpunk.css">
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="terminal-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -31,7 +32,7 @@
     <div id="cyberpunk-bg"></div>
     
     <header>
-        <div class="logo">SUMIT<span>DON</span></div>
+        <div class="logo">MONKEY<span>DEV</span></div>
         <div class="nav-toggle">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -187,17 +188,20 @@
         <section id="projects" class="projects">
             <div class="container">
                 <h2 class="section-title">My <span>Projects</span></h2>
-                <div class="coming-soon">
-                    <div class="coming-soon-content">
-                        <h3>Projects Will Be Added Soon</h3>
-                        <p>I'm currently working on some exciting new projects. Check back later!</p>
-                        <div class="coming-soon-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
+                <div class="terminal-container" id="terminal-container">
+                    <div class="terminal-header">
+                        <div class="terminal-title">Projects Terminal</div>
+                        <div class="terminal-controls">
+                            <div class="terminal-button minimize"></div>
+                            <div class="terminal-button maximize"></div>
+                            <div class="terminal-button close"></div>
                         </div>
                     </div>
+                    <div class="terminal-content">
+                        <div id="terminal-text"></div>
+                    </div>
+                    <div class="terminal-scanline"></div>
+                    <div class="terminal-glitch"></div>
                 </div>
             </div>
         </section>
@@ -217,7 +221,7 @@
                                 </svg>
                                 <div>
                                     <h4>Email</h4>
-                                    <p><a href=""><span class="__cf_email__" data-cfemail="2a474544414f536a4d474b434604494547">monkey@email.com</span></a></p>
+                                    <p><a href><span class="__cf_email__" data-cfemail="365b59585d534f76515b575f5a1855595b">monkey@email.com</span></a></p>
                                 </div>
                             </div>
                             <div class="contact-method">
@@ -266,11 +270,11 @@
             <div class="footer-content">
                 <div class="footer-info">
                     <div class="logo">SUMIT<span>DON</span></div>
-                    <p class="copyright">&copy; 2025 All Rights Reserved</p>
+                    <p class="copyright">&copy; 2077 All Rights Reserved</p>
                 </div>
                 <div class="social-icons">
                     <a href="https://github.com" target="_blank" class="social-icon github">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
                     </a>
@@ -300,5 +304,6 @@
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="cyberpunk-bg.js"></script>
     <script src="script.js"></script>
     <script src="typewriter.js"></script>
+    <script src="terminal-projects.js"></script>
 </body>
 </html>
