@@ -108,6 +108,51 @@ document.addEventListener('DOMContentLoaded', function() {
         
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
     });
+
+    // Add cyberpunk visual elements
+    // Update all headings to have cyberpunk styling
+    document.querySelectorAll('h1, h2.section-title').forEach(el => {
+        // Store original text for data attribute
+        const originalText = el.textContent;
+        el.setAttribute('data-glitch', originalText);
+        el.classList.add('cyberpunk-title');
+    });
+    
+    // Add cyberpunk styling to cards
+    document.querySelectorAll('.about-card, .contact-info, .contact-form, .skill-category, .coming-soon').forEach(el => {
+        el.classList.add('card-cyberpunk');
+    });
+    
+    // Add random glitching text effect
+    setInterval(() => {
+        // Select a random text element to glitch
+        const allTextElements = document.querySelectorAll('h3, .stat .number, .btn, nav a');
+        const randomElement = allTextElements[Math.floor(Math.random() * allTextElements.length)];
+        
+        if (randomElement) {
+            randomElement.classList.add('text-glitch');
+            setTimeout(() => {
+                randomElement.classList.remove('text-glitch');
+            }, 200);
+        }
+    }, 3000);
+    
+    // Add multiple scanning lines
+    for (let i = 0; i < 3; i++) {
+        const line = document.createElement('div');
+        line.classList.add('glow-line');
+        line.style.animationDelay = (i * 5) + 's';
+        document.body.appendChild(line);
+    }
+    
+    // Add dividers between sections
+    document.querySelectorAll('section').forEach(section => {
+        if (section.nextElementSibling && section.nextElementSibling.tagName === 'SECTION') {
+            const divider = document.createElement('div');
+            divider.classList.add('cyberpunk-divider');
+            section.parentNode.insertBefore(divider, section.nextElementSibling);
+        }
+    });
 });
 
 // Add mouse cursor effects
@@ -115,6 +160,21 @@ document.addEventListener('mousemove', function(e) {
     const cursor = document.querySelector('.cursor');
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
+    
+    // Create cursor trail
+    const trail = document.createElement('div');
+    trail.className = 'cursor-trail';
+    trail.style.left = e.clientX + 'px';
+    trail.style.top = e.clientY + 'px';
+    document.body.appendChild(trail);
+    
+    // Animate and remove trail
+    setTimeout(() => {
+        trail.style.opacity = '0';
+        setTimeout(() => {
+            trail.remove();
+        }, 500);
+    }, 100);
 });
 
 // Add skills hover animation
