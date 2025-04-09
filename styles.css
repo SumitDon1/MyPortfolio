@@ -779,6 +779,33 @@ nav ul li a:hover::after {
     font-size: 0.9rem;
 }
 
+.contact-method p a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    position: relative;
+    display: inline-block;
+}
+
+.contact-method p a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-color);
+    transition: var(--transition-fast);
+}
+
+.contact-method p a:hover {
+    color: var(--secondary-color);
+}
+
+.contact-method p a:hover::after {
+    width: 100%;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
