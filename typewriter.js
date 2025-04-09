@@ -28,4 +28,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start the typewriter effect
     typeText(textToType);
-};
+});
