@@ -1,0 +1,145 @@
+body {
+  background-color: #050518;
+  background-image: 
+    linear-gradient(0deg, rgba(5, 5, 24, 0.9) 0%, rgba(5, 5, 24, 0.9) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%230fe0b6' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(15, 224, 182, 0.1) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(15, 224, 182, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow-line {
+  position: fixed;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(15, 224, 182, 0) 5%,
+    rgba(15, 224, 182, 0.5) 50%, 
+    rgba(15, 224, 182, 0) 95%, 
+    transparent 100%);
+  animation: scan-line 15s linear infinite;
+  z-index: -1;
+}
+
+@keyframes scan-line {
+  0% { top: -10%; opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { top: 110%; opacity: 0.5; }
+}
+
+.cyberpunk-title {
+  text-shadow: 
+    0 0 5px rgba(15, 224, 182, 0.7),
+    0 0 10px rgba(15, 224, 182, 0.5),
+    0 0 15px rgba(15, 224, 182, 0.3);
+  position: relative;
+}
+
+.cyberpunk-title::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  filter: blur(1px);
+  animation: glitch-effect 5s infinite alternate;
+}
+
+@keyframes glitch-effect {
+  0%, 5%, 10% {
+    transform: translateX(-2px);
+    color: #ff00ff;
+  }
+  2%, 7%, 12% {
+    transform: translateX(2px);
+    color: #0fe0b6;
+  }
+  3%, 8%, 13% {
+    transform: translateX(-2px) translateY(2px);
+    color: #0fe0b6;
+  }
+  4%, 9%, 14% {
+    transform: translateX(2px) translateY(-2px);
+    color: #ff00ff;
+  }
+  15%, 100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* Section dividers */
+.cyberpunk-divider {
+  position: relative;
+  height: 20px;
+  width: 100%;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.cyberpunk-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #0fe0b6, transparent);
+}
+
+.cyberpunk-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background-color: #050518;
+  border: 1px solid #0fe0b6;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Update card styling */
+.card-cyberpunk {
+  border: 1px solid #0fe0b6;
+  box-shadow: 
+    0 0 5px rgba(15, 224, 182, 0.2),
+    0 0 10px rgba(15, 224, 182, 0.1),
+    inset 0 0 5px rgba(15, 224, 182, 0.05);
+  background: linear-gradient(135deg, rgba(5, 5, 24, 0.8) 0%, rgba(17, 17, 40, 0.9) 100%);
+  backdrop-filter: blur(10px);
+}
+
+.card-cyberpunk::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 30%, rgba(15, 224, 182, 0.1), transparent 70%);
+  z-index: -1;
+  animation: card-shine 5s infinite alternate;
+}
+
+@keyframes card-shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
