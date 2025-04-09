@@ -1,5 +1,4 @@
-/* New file for additional animations to avoid extending styles.css */
-/* Scroll up animations - floating effect */
+
 .fade-in.active-up {
     animation: float-up 0.8s ease forwards;
 }
